@@ -37,6 +37,7 @@ IPTIME 외부접속주소가 내부망으로 뜨는 현상이 있어 GNT2400 모
 
 고로
 
+sender.ps1
 ```shell
 $Username = "yourusername"
 $Password = "yourpassword"
@@ -45,7 +46,7 @@ $To = "recipient@example.com"
 $Subject = "Subject of the email"
 $Body = "Body of the email."
 
-$SMTPServer = "smtp.example.com"
+$SMTPServer = "smtp.example.com" 
 $SMTPPort = 587
 
 $SMTPClient = New-Object Net.Mail.SmtpClient($SMTPServer, $SMTPPort)
@@ -55,6 +56,11 @@ $SMTPClient.Credentials = New-Object System.Net.NetworkCredential($Username, $Pa
 $Message = New-Object System.Net.Mail.MailMessage($From, $To, $Subject, $Body)
 
 $SMTPClient.Send($Message)
+```
+
+다음과같이 배치파일을 만들어 시작프로그램에 넣어둔다
+```bat
+powershell.exe -ExecutionPolicy Bypass -File "C:\ .... \sender.ps1"
 ```
 
 * Moonlight
