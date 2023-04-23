@@ -56,7 +56,6 @@ $Message = New-Object System.Net.Mail.MailMessage($From, $To, $Subject, $Body)
 
 $SMTPClient.Send($Message)
 ```
-- by chatGPT
 
 * Moonlight
 
